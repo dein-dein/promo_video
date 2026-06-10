@@ -132,16 +132,16 @@ campaign brief.
 
 Primary logo:
 
-![Primary Dein-Dein logo](../apps/web/public/dein-new-logo.png)
+![Primary Dein-Dein logo](dein-new-logo.png)
 
-- Source: `apps/web/public/dein-new-logo.png`
+- Source: `dein-new-logo.png`
 - Use: all new marketing and promotional assets
 - Format: square PNG, 1254 x 1254 pixels, with a non-transparent light
   background baked into the asset
 
 Legacy logo:
 
-- Source: `apps/web/public/dein-logo.png`
+- Source: not stored in this repository
 - Do not use in new marketing assets.
 
 The primary mark combines a deep navy rounded shape with two gold geometric
@@ -235,8 +235,9 @@ fields, or low-contrast gold body text on light backgrounds.
 
 ### Primary Typeface
 
-Use **FK Grotesk Neue** for Dein-Dein-owned typography. The repository source is
-`apps/web/public/fonts/FKGroteskNeue.woff2` and supports weights 400-700.
+Use **FK Grotesk Neue** for Dein-Dein-owned typography when an approved font
+file is available. The primary web application uses FK Grotesk Neue at weights
+400-700, but the font file is not currently stored in this repository.
 
 Practical fallback stack:
 
@@ -546,5 +547,5 @@ This guide is grounded in:
 - `apps/web/src/app/page.tsx` for the motto and public positioning
 - `apps/web/src/components/layout/LogoIcon.tsx` for the active logo
 - `apps/web/src/app/opengraph-image.tsx` for an implemented social composition
-- `apps/web/public/dein-new-logo.png` for the primary logo asset
+- `dein-new-logo.png` for the repository-approved primary logo asset
 - `docs/UI_DESIGN_SYSTEM.md` for the current interface design language
