@@ -1,0 +1,26 @@
+{
+  "name": "dein-dein-promo-video",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "studio": "remotion studio src/index.ts",
+    "audio:generate": "node scripts/generate-original-audio.mjs",
+    "render:intro": "remotion render src/index.ts ShowtimeTicketLinkIntro campaigns/intro/working/renders/showtime-ticket-link-intro-review-v01.mp4 --codec h264",
+    "render:stills": "node scripts/render-stills.mjs"
+  },
+  "dependencies": {
+    "@remotion/media": "4.0.475",
+    "@remotion/transitions": "4.0.475",
+    "remotion": "4.0.475",
+    "zod": "4.3.6"
+  },
+  "devDependencies": {
+    "@remotion/cli": "4.0.475",
+    "@types/node": "^22.0.0",
+    "@types/react": "^19.0.0",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "typescript": "^5.7.0"
+  }
+}
