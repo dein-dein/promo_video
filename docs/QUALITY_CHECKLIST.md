@@ -10,13 +10,16 @@ results and exceptions in
 - [ ] The hook is readable and understandable within the first two seconds.
 - [ ] The middle of the video shows real feature proof.
 - [ ] The story remains understandable when muted.
-- [ ] The video ends with one clear next step.
-- [ ] The closing frame remains stable for at least `1.5 seconds`.
+- [ ] The video ends with one clear next step, or a product-only ending is
+      explicitly approved.
+- [ ] The closing frame remains stable for at least `1.5 seconds`, or the
+      short-bumper final hold is documented as an approved exception.
 
 ## Facts and Product Accuracy
 
 - [ ] Every visible or spoken claim matches an approved trusted source.
 - [ ] Product behavior, UI states, links, event details, and showtimes are real.
+- [ ] A screenshot-led bumper uses the approved screenshot unchanged.
 - [ ] Unknown or unconfirmed details are omitted or marked pending.
 - [ ] The edit does not imply Dein-Dein is the organizer, cinema, or ticket
       seller unless the brief confirms it.
@@ -30,7 +33,8 @@ results and exceptions in
 - [ ] The official logo is intact, legible, and correctly spaced.
 - [ ] Navy is dominant, gold is focused, and plum is restrained.
 - [ ] Typography is readable on a phone.
-- [ ] There is one approved primary CTA.
+- [ ] There is one approved primary CTA, or a CTA-free ending is explicitly
+      approved.
 - [ ] `Book Now` is absent unless explicitly approved under the brand rules.
 
 ## Motion and Product Footage
@@ -42,6 +46,9 @@ results and exceptions in
 - [ ] There is no rapid flashing, excessive glitching, constant zooming, or
       unreadable kinetic type.
 - [ ] The final logo remains still after its reveal.
+- [ ] Frame zero is intentional and does not create an unintended blank opening
+      frame.
+- [ ] The final camera move settles before the export ends.
 
 ## Captions and Accessibility
 
@@ -64,11 +71,13 @@ results and exceptions in
 
 ## Audio
 
-- [ ] Music and sound effects are rights-cleared.
-- [ ] Audio supports the pacing without overpowering the message.
-- [ ] Interaction sounds are restrained and meaningful.
-- [ ] There are no accidental system sounds, notifications, clipping, or harsh
-      level changes.
+- [ ] Music and sound effects are rights-cleared, or audio is explicitly
+      non-applicable.
+- [ ] Audio supports the pacing without overpowering the message, or the
+      campaign is approved as silent.
+- [ ] Interaction sounds are restrained and meaningful, or non-applicable.
+- [ ] There are no accidental system sounds, notifications, clipping, harsh
+      level changes, or unintended audio tracks.
 
 ## Export and Review
 
@@ -77,10 +86,15 @@ results and exceptions in
 - [ ] Frame rate and playback are stable.
 - [ ] No unintended blank frames, rendering artifacts, or clipped elements
       appear.
-- [ ] The hook, feature-proof frame, and CTA frame were reviewed as stills.
-- [ ] The full export was reviewed with audio.
+- [ ] Frame zero, the hook, feature-proof frame, and final hold were reviewed as
+      stills.
+- [ ] The full export was reviewed with audio, or audio was documented as
+      non-applicable.
 - [ ] The full export was reviewed muted.
-- [ ] The complete export was reviewed on a phone-sized display.
+- [ ] The complete export was reviewed on the intended target display.
+- [ ] Duration, dimensions, codec, and audio-track count match the brief.
+- [ ] Reviewed and approved files are byte-identical when the reviewed render
+      was promoted unchanged.
 - [ ] The approved export is stored and named according to
       [ASSET_MANAGEMENT.md](ASSET_MANAGEMENT.md).
 

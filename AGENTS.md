@@ -13,6 +13,8 @@ Before planning or producing an asset, read:
 4. [docs/SCREEN_RECORDING_GUIDE.md](docs/SCREEN_RECORDING_GUIDE.md)
 5. [docs/ASSET_MANAGEMENT.md](docs/ASSET_MANAGEMENT.md)
 6. [docs/QUALITY_CHECKLIST.md](docs/QUALITY_CHECKLIST.md)
+7. [docs/SHORT_BUMPER_RUNBOOK.md](docs/SHORT_BUMPER_RUNBOOK.md) when the
+   requested asset is a `3-6` second bumper
 
 The marketing brand guide wins if another document conflicts with it.
 
@@ -44,13 +46,36 @@ Unless a campaign brief explicitly says otherwise:
 - Closing frame: official logo, one approved CTA, and `dein-dein.com`, held
   stable for at least `1.5 seconds`
 
+## Production Lanes
+
+Select one lane before creating campaign files:
+
+### Default Feature Reel
+
+Use the default deliverable above for feature demonstrations that need context,
+multiple proof moments, explanatory captions, or a dedicated CTA frame.
+
+### Approved Short Bumper
+
+Use [docs/SHORT_BUMPER_RUNBOOK.md](docs/SHORT_BUMPER_RUNBOOK.md) only when the
+campaign brief explicitly approves a `3-6` second landscape or vertical bumper.
+A short bumper may use an approved screenshot as factual product proof, silent
+video-only output, or a product-only ending, but each departure from the default
+reel contract must be recorded as a creative exception.
+
+The short-bumper lane reduces repeated setup and review work. It never bypasses
+brief approval, factual accuracy, source preservation, privacy, rights, or final
+creative review.
+
 ## Mandatory Workflow
 
 1. Create a campaign brief from
    [docs/templates/FEATURE_CAMPAIGN_BRIEF.md](docs/templates/FEATURE_CAMPAIGN_BRIEF.md).
 2. Validate the recording and all supplied assets before editing.
 3. Create a timed storyboard from
-   [docs/templates/STORYBOARD_20_SECOND_REEL.md](docs/templates/STORYBOARD_20_SECOND_REEL.md).
+   [docs/templates/STORYBOARD_20_SECOND_REEL.md](docs/templates/STORYBOARD_20_SECOND_REEL.md)
+   or
+   [docs/templates/STORYBOARD_SHORT_BUMPER.md](docs/templates/STORYBOARD_SHORT_BUMPER.md).
 4. Lock on-screen copy with
    [docs/templates/CAPTION_COPY_SHEET.md](docs/templates/CAPTION_COPY_SHEET.md).
 5. Produce the edit without altering factual product behavior.
@@ -60,7 +85,12 @@ Unless a campaign brief explicitly says otherwise:
    [docs/templates/FINAL_CREATIVE_REVIEW.md](docs/templates/FINAL_CREATIVE_REVIEW.md).
 
 Do not begin production with unresolved facts, missing usage rights, or an
-unapproved primary CTA.
+unapproved ending policy. The ending policy must name either one approved
+primary CTA or an explicitly approved product-only ending.
+
+When a plan is approved and the factual source asset is available, proceed
+directly through implementation and verification. Do not reopen settled creative
+choices unless the source or render reveals a conflict.
 
 ## Approval Gates
 
@@ -113,19 +143,31 @@ Choose one:
 Other CTAs must be approved in the campaign brief and comply with the marketing
 brand guide.
 
-## Future Remotion Contract
+## Current Remotion Production Contract
 
-When Remotion is introduced, keep the production system data-driven:
+This repository contains an active Remotion production system. For every new
+composition:
 
-- Store campaign-specific facts and copy in typed composition props.
-- Keep reusable brand frames, captions, screen-recording treatments, and
-  transitions separate from campaign content.
+- Keep campaign-specific facts, timing, paths, and copy in a typed campaign
+  configuration separate from the composition.
+- Register new compositions additively in `src/root.tsx`; do not alter existing
+  campaign behavior unless requested.
 - Use deterministic frame-based animation only.
-- Use the official logo and approved assets from repository-managed paths.
-- Provide compositions for vertical reels first; add other formats only when a
-  campaign requires them.
-- Validate one-frame stills at key moments and render a final review video
-  before approval.
+- Preserve supplied recordings and screenshots unchanged under the campaign's
+  `source/` directory; generated files belong under `working/` or
+  `exports/approved/`.
+- Write campaign-contract tests before implementation and observe the expected
+  failure before adding the production module.
+- Render and inspect frame zero plus key story moments before rendering the full
+  review video.
+- Use `--muted` for approved silent output so the final file contains no audio
+  track, not merely silent audio samples.
+- Validate the final duration, dimensions, codec, and audio-track count. Use the
+  installed `mediabunny` package when `ffprobe` is unavailable.
+- Promote a reviewed render to `exports/approved/` only after review; when the
+  reviewed file is copied unchanged, verify both files are byte-identical.
 
-Do not scaffold or add Remotion dependencies until a real source recording and
-approved storyboard are available.
+Use
+`campaigns/2026-06-11-homepage-browser-load/` as the canonical short-bumper
+reference. Its exact URL-typing treatment is an example, not a mandatory
+creative pattern.

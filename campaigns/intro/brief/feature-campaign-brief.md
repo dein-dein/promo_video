@@ -5,41 +5,42 @@
 | Field | Approved Value |
 | --- | --- |
 | Campaign ID | `showtime-ticket-link-intro` |
-| Feature name | Movie showtime discovery and official-provider ticket link |
+| Feature name | Movie showtime discovery |
 | Campaign owner | Dein-Dein |
 | Creative reviewer | Pending final publishing approval |
 | Target publish date | Pending |
-| Publishing platform | Instagram Reel |
-| Target format | `1080x1920` vertical reel |
-| Target duration | `25 seconds` |
+| Publishing platform | Landscape social and web video |
+| Target format | `1920x1080` landscape |
+| Target duration | `20 seconds` |
 
 ## Objective and Audience
 
 **Primary audience:** People in Germany looking for Indian-language movie showtimes.
 
-**User need or problem:** Finding a relevant movie, its language, where and when it is showing, and the authorized provider link.
+**User need or problem:** Finding a relevant Indian movie screening by city and language.
 
-**Single feature being promoted:** Movie showtime discovery with ticket-link handoff.
+**Single feature being promoted:** Movie showtime discovery.
 
-**Single primary benefit:** Move from movie discovery to an authorized ticket provider in one clear journey.
+**Single primary benefit:** Find the right screening faster.
 
 **Desired audience action:** Find showtimes on Dein-Dein.
 
 ## Approved Messaging
 
-**Hook:** `You. Your movies.`
+**Hook:** `Looking for Indian movie showtimes?`
 
-**Supporting message:** `Many languages. One place.`
+**Supporting message:** `See relevant showtimes in one place.`
 
 **Primary CTA:** `Find showtimes`
 
 **Destination URL:** `dein-dein.com`
 
-**Required disclaimer:** `Tickets are sold by the official provider.`
+**Required disclaimer:** None. The edit does not make ticket-sales claims.
 
 ## Product Proof
 
-The recording demonstrates the Dein-Dein homepage, multilingual movie listings, a movie detail page, showtimes by city, ticket URLs, and handoff to CineStar.
+The recording demonstrates the Dein-Dein homepage, multilingual movie listings,
+showtimes by city, and a movie detail page.
 
 Trusted source: `campaigns/intro/source/recordings/intro_recording.mov`.
 
@@ -51,8 +52,7 @@ The unsafe opening browser-history section is excluded from the edit.
 | --- | --- | --- | --- | --- |
 | Official logo | `dein-new-logo.png`, Dein-Dein | Brand asset | Use intact | Yes |
 | Screen recording | Dein-Dein supplied recording | Approved public-safe source | Preserve original | Yes |
-| Music | `original-warm-pulse-v01.wav`, generated in repository | Original production asset | Campaign use | Yes |
-| Provider page | CineStar shown through real authorized-provider handoff | Approved factual proof | Do not imply Dein-Dein sells tickets | Yes |
+| Music | `original-minimal-landscape-pulse-v03.wav`, generated in repository | Original production asset | Campaign use | Yes |
 
 ## Gate 1 Approval
 
@@ -61,3 +61,11 @@ The unsafe opening browser-history section is excluded from the edit.
 - [x] Primary CTA approved
 - [x] Privacy and usage rights confirmed by campaign assumptions
 - [x] Required assets available
+
+## Production Treatment
+
+The supplied recording remains unchanged. Approved factual UI states are
+extracted from it and presented inside a clean landscape browser frame. New
+motion is limited to gentle camera paths, masked reveals, and restrained gold
+focus treatments. No replacement UI, fabricated state, or unsupported product
+behavior is introduced.

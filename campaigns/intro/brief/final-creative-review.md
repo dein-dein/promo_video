@@ -5,10 +5,10 @@
 | Field | Value |
 | --- | --- |
 | Campaign ID | `showtime-ticket-link-intro` |
-| Export filename | `showtime-ticket-link-intro-review-v01.mp4` |
-| Version | Review v01 |
-| Resolution | `1080x1920` |
-| Duration | `25 seconds` |
+| Export filename | `showtime-discovery-landscape-review-v02.mp4` |
+| Version | Landscape review v02 |
+| Resolution | `1920x1080` |
+| Duration | `20 seconds` |
 | Frame rate | `30 fps` |
 | Review date | `2026-06-11` |
 | Reviewer | Codex creative production review |
@@ -17,16 +17,14 @@
 
 | Review | Status | Notes |
 | --- | --- | --- |
-| Full export with audio | Pass technical review | Original campaign instrumental present |
-| Full export muted | Pass structural review | Burned-in copy carries the complete story |
-| Hook still | Pass | Clear first-scene hook |
-| Language proof still | Pass | Multiple visible movie languages |
-| Showtime proof still | Pass | Movie detail and ticket URL visible |
-| Provider handoff still | Pass | Loaded CineStar provider page and disclosure visible |
-| CTA still | Pass | Intact logo, one CTA, official URL |
-| Facts and UI accuracy | Pass against supplied recording | No fabricated UI |
-| Privacy and rights | Pass with campaign assumptions | Unsafe opening excluded |
-| Brand and CTA compliance | Pass | No ticket-sale implication |
+| Full export with audio | Pass technical render; playback approval pending | H.264 video with stereo AAC audio at `48 kHz` |
+| Full export muted | Structural review pass; playback approval pending | Burned-in copy carries the complete story |
+| Hook still | Pass | Hook is immediately readable and the real homepage is visible |
+| Feature-proof still | Pass | Real city, cinema, date, language, time, and detail states remain legible |
+| CTA still | Pass | Official logo remains intact with one approved CTA and official URL |
+| Facts and UI accuracy | Pass against supplied recording | Extracted factual states only; no fabricated UI |
+| Privacy and rights | Pass with campaign assumptions | Unsafe opening remains excluded; original campaign audio used |
+| Brand and CTA compliance | Pass | Navy, gold, restrained plum, intact logo, and approved CTA |
 
 ## Final Decision
 
@@ -35,4 +33,7 @@
 - [ ] Revisions required
 - [ ] Rejected
 
-Decision notes: Review render completed. Publishing approval remains with the campaign owner.
+Decision notes: The prior vertical review is superseded. Landscape review v02
+rendered successfully at `1920x1080`, `30 fps`, with H.264 video, stereo AAC
+audio, and a measured duration of `20.053333 seconds`. Publishing approval and
+full human playback review remain with the campaign owner.

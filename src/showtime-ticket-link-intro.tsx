@@ -1,4 +1,4 @@
-import {Audio, Video} from "@remotion/media";
+import {Audio} from "@remotion/media";
 import {
   AbsoluteFill,
   Easing,
@@ -7,7 +7,6 @@ import {
   interpolate,
   staticFile,
   useCurrentFrame,
-  useVideoConfig,
 } from "remotion";
 import {campaign} from "./campaigns/showtime-ticket-link.js";
 
@@ -17,204 +16,133 @@ const colors = {
   gold: "#F0C75E",
   plum: "#8A6DD1",
   ivory: "#F6F1E8",
-  warmCanvas: "#F7F2EA",
+  canvas: "#F7F2EA",
+  ink: "#1E1737",
 };
 
-const clamp = {
-  extrapolateLeft: "clamp" as const,
-  extrapolateRight: "clamp" as const,
-};
+const clamp = {extrapolateLeft: "clamp" as const, extrapolateRight: "clamp" as const};
+const smooth = Easing.bezier(0.16, 1, 0.3, 1);
 
-const Background = () => {
+const progress = (frame: number, duration: number, start = 0, end = 1) =>
+  interpolate(frame, [duration * start, duration * end], [0, 1], {...clamp, easing: smooth});
+
+const DotGrid = () => (
+  <AbsoluteFill
+    style={{
+      backgroundColor: colors.canvas,
+      backgroundImage: "radial-gradient(rgba(36,28,70,.13) 1.5px, transparent 1.5px)",
+      backgroundSize: "28px 28px",
+    }}
+  />
+);
+
+const BrowserWindow = ({scene}: {scene: (typeof campaign.scenes)[number]}) => {
   const frame = useCurrentFrame();
-  const drift = interpolate(frame, [0, campaign.durationInFrames], [-80, 80], clamp);
+  if (!("stateFrame" in scene)) return null;
+
+  const camera = scene.camera!;
+  const focusItems = scene.focus ?? [];
+  const stateFrame = scene.stateFrame!;
+  const duration = scene.durationInFrames;
+  const reveal = progress(frame, duration, 0, 0.18);
+  const travel = progress(frame, duration, 0.08, 0.92);
+  const exit = progress(frame, duration, 0.9, 1);
+  const x = interpolate(travel, [0, 1], [camera.from.x, camera.to.x]);
+  const y = interpolate(travel, [0, 1], [camera.from.y, camera.to.y]);
+  const scale = interpolate(travel, [0, 1], [camera.from.scale, camera.to.scale]);
 
   return (
-    <AbsoluteFill
+    <div
       style={{
-        background: `linear-gradient(145deg, ${colors.deepNavy}, ${colors.navy} 58%, #33205a)`,
+        position: "absolute",
+        left: 160,
+        right: 160,
+        top: 214,
+        height: 790,
+        borderRadius: 28,
         overflow: "hidden",
+        background: "#fff",
+        border: "1px solid rgba(36,28,70,.14)",
+        boxShadow: "0 35px 90px rgba(36,28,70,.22)",
+        opacity: reveal * (1 - exit),
+        transform: `translateY(${interpolate(reveal, [0, 1], [28, 0])}px) scale(${interpolate(reveal, [0, 1], [.985, 1])})`,
       }}
     >
-      <div
-        style={{
-          position: "absolute",
-          width: 900,
-          height: 900,
-          borderRadius: "50%",
-          left: -360 + drift,
-          top: 420,
-          background: "radial-gradient(circle, rgba(138,109,209,.25), rgba(138,109,209,0) 70%)",
-        }}
-      />
-      <div
-        style={{
-          position: "absolute",
-          width: 760,
-          height: 760,
-          borderRadius: "50%",
-          right: -300 - drift,
-          top: -180,
-          background: "radial-gradient(circle, rgba(240,199,94,.20), rgba(240,199,94,0) 70%)",
-        }}
-      />
-    </AbsoluteFill>
-  );
-};
-
-const Caption = ({copy, kicker}: {copy: string; kicker?: string}) => {
-  const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const opacity = interpolate(frame, [0, 0.35 * fps, 2.8 * fps, 3.4 * fps], [0, 1, 1, 0], {
-    ...clamp,
-    easing: Easing.bezier(0.16, 1, 0.3, 1),
-  });
-  const y = interpolate(frame, [0, 0.45 * fps], [28, 0], {
-    ...clamp,
-    easing: Easing.bezier(0.16, 1, 0.3, 1),
-  });
-
-  return (
-    <div style={{position: "absolute", left: 76, right: 76, top: 120, opacity, transform: `translateY(${y}px)`}}>
-      {kicker ? (
-        <div style={{color: colors.gold, fontSize: 22, fontWeight: 700, letterSpacing: "0.18em", marginBottom: 18}}>
-          {kicker}
-        </div>
-      ) : null}
-      <div
-        style={{
-          color: colors.ivory,
-          fontFamily: "Inter, system-ui, sans-serif",
-          fontSize: 72,
-          fontWeight: 750,
-          letterSpacing: "-0.045em",
-          lineHeight: 1.04,
-          maxWidth: 920,
-        }}
-      >
-        {copy}
+      <div style={{height: 54, background: "#fffaf3", borderBottom: "1px solid rgba(36,28,70,.12)", display: "flex", alignItems: "center", paddingLeft: 24, gap: 12}}>
+        {["#D66E55", colors.gold, "#72A879"].map((color) => (
+          <div key={color} style={{width: 14, height: 14, borderRadius: "50%", background: color}} />
+        ))}
+        <div style={{marginLeft: 28, width: 520, height: 25, borderRadius: 999, background: "rgba(36,28,70,.07)"}} />
       </div>
-      <div style={{width: 92, height: 6, borderRadius: 999, background: colors.gold, marginTop: 28}} />
+      <div style={{position: "relative", height: 736, overflow: "hidden", background: colors.canvas}}>
+        <Img
+          src={staticFile(stateFrame)}
+          style={{
+            width: "100%",
+            height: "100%",
+            objectFit: "cover",
+            transformOrigin: `${x}% ${y}%`,
+            transform: `scale(${scale})`,
+          }}
+        />
+        {focusItems.map((item, index) => {
+          const focusReveal = interpolate(frame, [18 + index * 10, 34 + index * 10], [0, 1], {...clamp, easing: smooth});
+          return (
+            <div
+              key={item.label}
+              style={{
+                position: "absolute",
+                left: `${item.x}%`,
+                top: `${item.y}%`,
+                width: `${item.width}%`,
+                height: `${item.height}%`,
+                borderRadius: 18,
+                border: `3px solid ${colors.gold}`,
+                boxShadow: "0 0 0 7px rgba(240,199,94,.18), 0 12px 36px rgba(36,28,70,.24)",
+                opacity: focusReveal,
+                transform: `translate(-50%,-50%) scale(${interpolate(focusReveal, [0, 1], [.94, 1])})`,
+              }}
+            >
+              <div style={{position: "absolute", left: 10, top: -36, padding: "7px 13px", borderRadius: 999, background: colors.navy, color: colors.ivory, fontFamily: "Inter, system-ui, sans-serif", fontSize: 18, fontWeight: 700, whiteSpace: "nowrap"}}>
+                {item.label}
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 };
 
-const ProductStage = ({
-  clipStart,
-  playbackRate,
-  focus,
-  disclosure,
-}: {
-  clipStart: number;
-  playbackRate: number;
-  focus: string;
-  disclosure?: string;
-}) => {
+const ProductScene = ({scene}: {scene: (typeof campaign.scenes)[number]}) => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const reveal = interpolate(frame, [0, 0.6 * fps], [0, 1], {
-    ...clamp,
-    easing: Easing.bezier(0.16, 1, 0.3, 1),
-  });
-  const scale = interpolate(frame, [0, 3.8 * fps], [0.965, 1.02], clamp);
-
+  const reveal = progress(frame, scene.durationInFrames, 0.02, 0.2);
   return (
-    <>
-      <div
-        style={{
-          position: "absolute",
-          left: 54,
-          right: 54,
-          top: 430,
-          height: 1060,
-          borderRadius: 44,
-          padding: 10,
-          background: "linear-gradient(135deg, rgba(240,199,94,.95), rgba(138,109,209,.78))",
-          boxShadow: "0 38px 100px rgba(5,2,18,.55)",
-          opacity: reveal,
-          transform: `translateY(${(1 - reveal) * 70}px) scale(${scale})`,
-          overflow: "hidden",
-        }}
-      >
-        <div style={{position: "relative", width: "100%", height: "100%", borderRadius: 35, overflow: "hidden", background: colors.warmCanvas}}>
-          <Video
-            src={staticFile(campaign.recording)}
-            muted
-            trimBefore={clipStart * fps}
-            playbackRate={playbackRate}
-            objectFit="cover"
-            style={{width: "100%", height: "100%", objectPosition: focus}}
-          />
-          <div
-            style={{
-              position: "absolute",
-              inset: 0,
-              boxShadow: "inset 0 0 0 2px rgba(255,255,255,.4), inset 0 -180px 180px -160px rgba(26,20,50,.38)",
-            }}
-          />
+    <AbsoluteFill>
+      <DotGrid />
+      <div style={{position: "absolute", width: 600, height: 600, right: -180, top: -250, borderRadius: "50%", background: "radial-gradient(circle, rgba(138,109,209,.2), transparent 70%)"}} />
+      <div style={{position: "absolute", left: 160, top: 58, opacity: reveal, transform: `translateY(${interpolate(reveal, [0, 1], [24, 0])}px)`}}>
+        <div style={{fontFamily: "Inter, system-ui, sans-serif", color: colors.navy, fontSize: 58, lineHeight: 1.04, letterSpacing: "-.045em", fontWeight: 780}}>
+          {scene.copy}
         </div>
+        <div style={{width: 92, height: 6, marginTop: 18, borderRadius: 10, background: colors.gold}} />
       </div>
-      {disclosure ? (
-        <div
-          style={{
-            position: "absolute",
-            left: 86,
-            right: 86,
-            bottom: 150,
-            padding: "22px 28px",
-            borderRadius: 24,
-            background: "rgba(247,242,234,.96)",
-            color: colors.navy,
-            fontFamily: "Inter, system-ui, sans-serif",
-            fontWeight: 700,
-            fontSize: 27,
-            lineHeight: 1.25,
-            textAlign: "center",
-            boxShadow: "0 16px 50px rgba(0,0,0,.24)",
-          }}
-        >
-          {disclosure}
-        </div>
-      ) : null}
-    </>
+      <BrowserWindow scene={scene} />
+    </AbsoluteFill>
   );
 };
 
-const ProductScene = ({scene}: {scene: (typeof campaign.scenes)[number]}) => (
-  <AbsoluteFill>
-    <Caption copy={scene.copy} kicker={scene.id === "provider" ? "OFFICIAL PROVIDER HANDOFF" : "DEIN-DEIN MOVIE DISCOVERY"} />
-    {"clipStart" in scene ? (
-      <ProductStage
-        clipStart={scene.clipStart}
-        playbackRate={scene.playbackRate}
-        focus={scene.focus}
-        disclosure={"disclosure" in scene ? scene.disclosure : undefined}
-      />
-    ) : null}
-  </AbsoluteFill>
-);
-
 const ClosingScene = () => {
   const frame = useCurrentFrame();
-  const {fps} = useVideoConfig();
-  const opacity = interpolate(frame, [0, 0.45 * fps], [0, 1], clamp);
-  const scale = interpolate(frame, [0, 0.65 * fps], [0.96, 1], {
-    ...clamp,
-    easing: Easing.bezier(0.16, 1, 0.3, 1),
-  });
-
+  const reveal = progress(frame, 90, 0, 0.22);
   return (
-    <AbsoluteFill style={{alignItems: "center", justifyContent: "center", opacity}}>
-      <div style={{display: "flex", flexDirection: "column", alignItems: "center", transform: `scale(${scale})`}}>
-        <Img
-          src={staticFile(campaign.logo)}
-          style={{width: 280, height: 280, borderRadius: 34, boxShadow: "0 24px 70px rgba(0,0,0,.34)"}}
-        />
-        <div style={{color: colors.ivory, fontFamily: "Inter, system-ui, sans-serif", fontSize: 76, fontWeight: 760, marginTop: 54}}>
-          Find showtimes
-        </div>
-        <div style={{color: colors.gold, fontFamily: "Inter, system-ui, sans-serif", fontSize: 38, fontWeight: 700, marginTop: 20}}>
-          dein-dein.com
+    <AbsoluteFill style={{background: colors.deepNavy, alignItems: "center", justifyContent: "center"}}>
+      <div style={{position: "absolute", width: 850, height: 850, borderRadius: "50%", background: "radial-gradient(circle, rgba(138,109,209,.22), transparent 70%)"}} />
+      <div style={{display: "flex", alignItems: "center", gap: 58, opacity: reveal, transform: `translateY(${interpolate(reveal, [0, 1], [24, 0])}px) scale(${interpolate(reveal, [0, 1], [.96, 1])})`}}>
+        <Img src={staticFile(campaign.logo)} style={{width: 230, height: 230, borderRadius: 28, boxShadow: "0 25px 65px rgba(0,0,0,.35)"}} />
+        <div>
+          <div style={{fontFamily: "Inter, system-ui, sans-serif", color: colors.ivory, fontSize: 78, fontWeight: 780, letterSpacing: "-.045em"}}>Find showtimes</div>
+          <div style={{fontFamily: "Inter, system-ui, sans-serif", color: colors.gold, fontSize: 42, fontWeight: 720, marginTop: 14}}>dein-dein.com</div>
         </div>
       </div>
     </AbsoluteFill>
@@ -223,8 +151,7 @@ const ClosingScene = () => {
 
 export const ShowtimeTicketLinkIntro = () => (
   <AbsoluteFill>
-    <Background />
-    <Audio src={staticFile(campaign.audio)} volume={0.34} />
+    <Audio src={staticFile(campaign.audio)} volume={0.32} />
     {campaign.scenes.map((scene) => (
       <Sequence key={scene.id} from={scene.from} durationInFrames={scene.durationInFrames} premountFor={30}>
         {scene.id === "closing" ? <ClosingScene /> : <ProductScene scene={scene} />}

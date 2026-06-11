@@ -12,6 +12,7 @@
 | Publishing platform | |
 | Target format | `1080x1920` vertical reel |
 | Target duration | Approximately `20 seconds` |
+| Production lane | Default feature reel / approved short bumper |
 
 ## Objective and Audience
 
@@ -33,13 +34,15 @@
 
 **Primary CTA:**
 
+**Approved product-only ending, if applicable:**
+
 **Destination URL:**
 
 **Required disclaimer or provider-confirmation language:**
 
 ## Product Proof
 
-**What the recording must demonstrate:**
+**What the approved factual source must demonstrate:**
 
 **Trusted source confirming the feature and claims:**
 
@@ -47,11 +50,14 @@
 
 **Facts or UI states that must not appear:**
 
+**Approved source type:** Screen recording / screenshot / other approved source
+
 ## Recording Intake
 
 | Field | Value |
 | --- | --- |
 | Source recording filename | |
+| Source screenshot filename, if applicable | |
 | Capture date | |
 | Product environment/version | |
 | Viewport and resolution | |
@@ -82,9 +88,11 @@ or duration:
 
 - [ ] The brief promotes one feature and one primary benefit.
 - [ ] Every claim and visible fact has a trusted source.
-- [ ] The primary CTA is approved.
+- [ ] The primary CTA is approved, or marked non-applicable for an approved
+      product-only ending.
+- [ ] Any product-only ending is explicitly approved.
 - [ ] Privacy and usage rights are confirmed.
-- [ ] Required source recordings and assets are available.
+- [ ] Required factual sources and assets are available.
 
 **Approved by:**
 

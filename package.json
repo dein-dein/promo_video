@@ -6,8 +6,11 @@
     "test": "node --test tests/*.test.mjs",
     "studio": "remotion studio src/index.ts",
     "audio:generate": "node scripts/generate-original-audio.mjs",
-    "render:intro": "remotion render src/index.ts ShowtimeTicketLinkIntro campaigns/intro/working/renders/showtime-ticket-link-intro-review-v01.mp4 --codec h264",
-    "render:stills": "node scripts/render-stills.mjs"
+    "render:intro": "remotion render src/index.ts ShowtimeTicketLinkIntro campaigns/intro/working/renders/showtime-discovery-landscape-review-v02.mp4 --codec h264",
+    "render:stills": "node scripts/render-stills.mjs",
+    "render:homepage-browser-load:stills": "node scripts/render-homepage-browser-load-stills.mjs",
+    "render:homepage-browser-load:review": "remotion render src/index.ts HomepageBrowserLoadBumper campaigns/2026-06-11-homepage-browser-load/working/renders/homepage-browser-load-landscape-review-v01.mp4 --codec h264 --muted",
+    "render:homepage-browser-load:approved": "remotion render src/index.ts HomepageBrowserLoadBumper campaigns/2026-06-11-homepage-browser-load/exports/approved/2026-06-11-homepage-browser-load-landscape-1920x1080-approved-v01.mp4 --codec h264 --muted"
   },
   "dependencies": {
     "@remotion/media": "4.0.475",

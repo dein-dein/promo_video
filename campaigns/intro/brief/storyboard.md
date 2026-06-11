@@ -1,14 +1,12 @@
-# Showtime And Ticket-Link Intro Storyboard
+# Minimal Landscape Showtime Promo Storyboard
 
 | Time | Story Purpose | Product Footage | Caption |
 | --- | --- | --- | --- |
-| `0:00-0:03` | Hook | Homepage movie discovery context | `You. Your movies.` |
-| `0:03-0:07` | Discovery | Browse the movie selection | `Discover movies near you.` |
-| `0:07-0:11` | Language breadth | Multilingual movie list | `Many languages. One place.` |
-| `0:11-0:16` | Showtime proof | Movie detail and showtime information | `Find when and where it is showing.` |
-| `0:16-0:21` | Provider handoff | Real transition to CineStar | `Continue to the official ticket provider.` |
-| `0:21-0:25` | CTA | Official logo and stable brand frame | `Find showtimes` and `dein-dein.com` |
+| `0:00-0:03` | Hook | Real homepage appears inside a clean desktop browser frame | `Looking for Indian movie showtimes?` |
+| `0:03-0:07` | Discovery | Real multilingual listing with restrained city and language focus | `Choose your city and language.` |
+| `0:07-0:13` | Feature proof | Real city-showtime state with cinema, date, language, and time highlighted | `See relevant showtimes in one place.` |
+| `0:13-0:17` | Benefit | Real movie-detail state settles on screening information | `Find the right screening faster.` |
+| `0:17-0:20` | CTA | Official logo settles on a stable deep-navy brand frame | `Find showtimes` and `dein-dein.com` |
 
-The provider scene includes the disclosure: `Tickets are sold by the official provider.`
-
-All footage is cropped from the supplied source without altering product behavior.
+All factual product states are extracted from the supplied source without
+altering product behavior. Newly animated motion only directs attention.

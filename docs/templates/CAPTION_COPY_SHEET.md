@@ -12,6 +12,8 @@ Lock all visible and spoken copy before final motion polish.
 
 **Primary CTA:**
 
+**Approved product-only ending, if applicable:**
+
 ## Copy Table
 
 | Time / Scene | Copy | Purpose | Trusted Source | Approved |
@@ -30,7 +32,9 @@ Lock all visible and spoken copy before final motion polish.
 - Use short, direct, warm language focused on the audience benefit.
 - Preserve factual names, UI labels, dates, cities, languages, and details.
 - Omit unconfirmed details.
-- Use one primary CTA.
+- Use one primary CTA unless a CTA-free product-only ending is approved.
+- If a CTA-free product-only ending is approved, record it and omit the closing
+  CTA row rather than inventing one.
 - Do not use `Book Now` unless it is explicitly approved under the brand rules.
 - Do not invent urgency, availability, ratings, popularity, or outcomes.
 - Keep every caption readable on a phone and visible long enough to read.
@@ -41,7 +45,7 @@ Lock all visible and spoken copy before final motion polish.
 - [ ] Spelling, punctuation, naming, and capitalization are correct.
 - [ ] The copy remains understandable without audio.
 - [ ] No caption covers essential UI or exceeds the safe area.
-- [ ] The final CTA is approved.
+- [ ] The final CTA or product-only ending is approved.
 
 **Approved by:**
 

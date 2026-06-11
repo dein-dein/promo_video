@@ -41,8 +41,8 @@ drafts in `exports/approved/`.
 ## Source Preservation
 
 - Treat everything under `source/` as immutable.
-- Never overwrite, trim, transcode, color-correct, or rename an original source
-  destructively.
+- Never overwrite, trim, transcode, crop, recolor, color-correct, or rename an
+  original source destructively.
 - Create processed versions under `working/`.
 - Keep the original filename when practical; add a descriptive suffix to
   derivatives.
@@ -51,6 +51,13 @@ drafts in `exports/approved/`.
 
 If an original must be replaced, retain the prior file and document why the new
 source supersedes it.
+
+### Supplied Screenshots
+
+An approved screenshot may be the factual source for an explicitly approved
+short bumper. Store it unchanged under `source/images/` and verify its checksum
+against the supplied original before production. Do not modify screenshot
+content to improve the story; camera movement may reframe the unchanged source.
 
 ## Naming Conventions
 
@@ -100,12 +107,14 @@ Approved exports must identify the campaign, format, and version:
 When another format is approved, replace `vertical-1080x1920` with the actual
 format and resolution.
 
-## Future Remotion Paths
+When a reviewed render is promoted unchanged to `exports/approved/`, verify that
+the review and approved files have matching checksums. If the approved export is
+rendered or encoded separately, review it as a separate final file.
 
-When the repository gains a Remotion application:
+## Remotion Paths
 
-- Keep reusable production assets under the application's public asset
-  directory.
+- Keep reusable production assets at repository-managed paths available through
+  the configured Remotion public directory.
 - Keep campaign source recordings outside reusable component directories.
 - Keep campaign data separate from reusable scene code.
 - Keep rendered previews and approved exports outside source-code directories.

@@ -4,6 +4,21 @@ Follow this workflow for every Dein-Dein feature-promotion video. Each phase
 ends with an approval gate. Do not silently carry unresolved facts, rights, or
 creative decisions into the next phase.
 
+## Select A Production Lane
+
+Use the default feature-reel lane unless the campaign brief explicitly approves
+the accelerated short-bumper lane.
+
+- **Default feature reel:** Approximately `20` seconds, vertical-first, real
+  screen recording, explanatory story, and a stable branded CTA frame.
+- **Approved short bumper:** `3-6` seconds, landscape or vertical, one factual
+  source screenshot or short recording, and the workflow in
+  [SHORT_BUMPER_RUNBOOK.md](SHORT_BUMPER_RUNBOOK.md).
+
+Shortened duration, screenshot-led proof, silent output, non-default format,
+and a product-only ending are permitted only as documented creative exceptions.
+Both lanes retain every approval gate below.
+
 ## 1. Intake and Brief
 
 Create a campaign folder following [ASSET_MANAGEMENT.md](ASSET_MANAGEMENT.md)
@@ -18,26 +33,33 @@ Confirm:
 - The trusted source for every factual detail
 - Rights status for recordings, imagery, music, sound effects, fonts, and logos
 - Required disclaimers or provider-confirmation language
+- The selected production lane and every approved exception
 
-**Approval gate:** The brief is complete, factual, rights-safe, and has one
-approved primary CTA.
+**Approval gate:** The brief is complete, factual, rights-safe, and has either
+one approved primary CTA or an explicitly approved product-only ending.
 
-## 2. Screen Recording Intake
+## 2. Source Intake
 
-Capture or validate the recording against
-[SCREEN_RECORDING_GUIDE.md](SCREEN_RECORDING_GUIDE.md).
+For a default feature reel, capture or validate the recording against
+[SCREEN_RECORDING_GUIDE.md](SCREEN_RECORDING_GUIDE.md). For an approved short
+bumper, validate the supplied screenshot or recording against
+[SHORT_BUMPER_RUNBOOK.md](SHORT_BUMPER_RUNBOOK.md).
 
-Copy the original file into the campaign's `source/recordings/` directory. Do
-not trim, transcode, rename destructively, or overwrite the original recording.
-Record any privacy edits or exclusions in the campaign brief.
+Copy the original file into the appropriate campaign `source/` directory. Do
+not trim, transcode, recolor, rename destructively, or overwrite an original.
+Verify supplied screenshots with a checksum and record any privacy edits or
+exclusions in the campaign brief.
 
-**Approval gate:** The source clearly demonstrates the feature, contains no
-private or unsafe information, and is suitable for the target format.
+**Approval gate:** The source clearly proves the approved idea, contains no
+private or unsafe information, remains unchanged, and is suitable for the target
+format.
 
 ## 3. Storyboard
 
 Complete
-[templates/STORYBOARD_20_SECOND_REEL.md](templates/STORYBOARD_20_SECOND_REEL.md).
+[templates/STORYBOARD_20_SECOND_REEL.md](templates/STORYBOARD_20_SECOND_REEL.md)
+or
+[templates/STORYBOARD_SHORT_BUMPER.md](templates/STORYBOARD_SHORT_BUMPER.md).
 Build the story around:
 
 1. A readable hook in the first two seconds
@@ -45,6 +67,9 @@ Build the story around:
 3. Real feature proof
 4. A concise benefit
 5. A stable final frame with one CTA and `dein-dein.com`
+
+For an approved short bumper, resolve on one strong factual proof moment. A
+product-only ending is allowed only when documented in the brief.
 
 Every proposed crop, zoom, caption, and transition must have a communication
 purpose.
@@ -74,8 +99,11 @@ Build the visual story with temporary or approved audio:
 - Add captions and restrained brand framing
 - Use simple cuts and transitions before adding polish
 - Hold the closing frame for at least `1.5 seconds`
+- For a short bumper, ensure frame zero is intentional and the final camera move
+  settles before the last frame
 
-Review the rough cut muted before reviewing it with audio.
+Review every rough cut muted. Review with audio when the campaign includes
+audio.
 
 **Approval gate:** The feature and benefit are clear, the pacing is readable,
 and the product sequence is truthful.
@@ -88,6 +116,7 @@ Apply [../VIDEO_STYLE.md](../VIDEO_STYLE.md):
 - Add only purposeful motion and focus effects
 - Use the official logo intact
 - Add rights-cleared music and restrained sound effects
+- For approved silent campaigns, render video-only output with `--muted`
 - Preserve readable contrast and caption safe areas
 
 Do not use effects to hide weak product proof or incomplete source footage.
@@ -102,27 +131,28 @@ Run [QUALITY_CHECKLIST.md](QUALITY_CHECKLIST.md) and complete
 
 Review:
 
-- The full video with audio
+- The full video with audio when applicable
 - The full video muted
-- The opening hook and final CTA frame as still images
+- Frame zero, the opening hook, feature proof, and the final hold as still
+  images
 - Every factual screen at full resolution
-- The export on a phone-sized display
+- The export on the intended target display
+- Technical duration, dimensions, codec, and audio-track count
+- Byte identity between the reviewed render and approved export when the review
+  file is promoted unchanged
 
 Store approved exports according to [ASSET_MANAGEMENT.md](ASSET_MANAGEMENT.md).
 
 **Approval gate:** All checklist items pass, or each exception is explicitly
 documented and approved.
 
-## Future Remotion Production
+## Current Remotion Production
 
-When Remotion is added:
+The repository uses Remotion for deterministic production. Keep campaign facts,
+timing, source paths, audio policy, and ending policy in a typed campaign
+configuration. Register compositions additively, write campaign-contract tests
+before implementation, render key stills before the review video, and keep
+draft renders separate from approved exports.
 
-- Keep campaign facts and copy in typed composition props.
-- Keep reusable scenes independent from campaign-specific content.
-- Use deterministic frame-based animation.
-- Use a vertical-reel composition as the initial production target.
-- Render stills at the hook, feature proof, and CTA frames for review.
-- Keep draft renders separate from approved exports.
-
-Remotion should implement the approved workflow, not replace its approval
+Remotion implements the approved workflow; it does not replace its approval
 gates.

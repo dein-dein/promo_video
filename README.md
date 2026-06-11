@@ -9,6 +9,11 @@ The default deliverable is a `20-second`, `1080x1920` vertical reel promoting
 one real Dein-Dein feature through real product footage, rights-cleared music,
 and burned-in captions.
 
+The repository also supports explicitly approved `3-6` second landscape or
+vertical bumpers. These use the accelerated workflow in
+[docs/SHORT_BUMPER_RUNBOOK.md](docs/SHORT_BUMPER_RUNBOOK.md) while preserving
+the same factual, privacy, rights, and review requirements.
+
 ## Start Here
 
 1. Read [AGENTS.md](AGENTS.md) for the creative-director operating rules.
@@ -21,6 +26,10 @@ and burned-in captions.
 6. Follow [docs/PRODUCTION_WORKFLOW.md](docs/PRODUCTION_WORKFLOW.md).
 7. Approve the final result with
    [docs/QUALITY_CHECKLIST.md](docs/QUALITY_CHECKLIST.md).
+
+For an approved short bumper, start with
+[docs/SHORT_BUMPER_RUNBOOK.md](docs/SHORT_BUMPER_RUNBOOK.md) and
+[docs/templates/STORYBOARD_SHORT_BUMPER.md](docs/templates/STORYBOARD_SHORT_BUMPER.md).
 
 ## Submitting a Feature Recording
 
@@ -62,10 +71,20 @@ constant zooming, fake UI, or unreadable kinetic typography.
 | `docs/SCREEN_RECORDING_GUIDE.md` | Recording and privacy requirements |
 | `docs/ASSET_MANAGEMENT.md` | Campaign folder and source-preservation rules |
 | `docs/QUALITY_CHECKLIST.md` | Final review and release criteria |
+| `docs/SHORT_BUMPER_RUNBOOK.md` | Accelerated `3-6` second bumper production |
 | `docs/templates/` | Reusable brief, storyboard, copy, and review forms |
+| `src/` | Remotion compositions and campaign configurations |
+| `tests/` | Campaign-contract tests |
+| `campaigns/` | Immutable sources, working files, review renders, and approved exports |
 
-## Current Phase
+## Current Production System
 
-This phase establishes the production contract and documentation. A reusable
-Remotion implementation should be added only after reviewing the first real
-feature recording and approving its storyboard.
+The repository contains an active Remotion production system with additive
+compositions, campaign-specific configurations, contract tests, review-still
+scripts, and campaign-managed exports.
+
+The default feature-reel workflow remains the baseline. The canonical
+short-bumper example is
+`campaigns/2026-06-11-homepage-browser-load/`; reuse its production pattern
+without assuming every bumper needs URL typing, a browser frame, or the same
+camera path.
