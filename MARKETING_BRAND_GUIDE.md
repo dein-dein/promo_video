@@ -136,8 +136,10 @@ Primary logo:
 
 - Source: `dein-new-logo.png`
 - Use: all new marketing and promotional assets
-- Format: square PNG, 1254 x 1254 pixels, with a non-transparent light
-  background baked into the asset
+- Format: square transparent PNG, 1254 x 1254 pixels, with the original navy
+  and gold mark plus a subtle outer shadow
+- Archived opaque source: `assets/archive/dein-new-logo-opaque-original.png`;
+  provenance only, not approved for new work
 
 Legacy logo:
 
@@ -157,8 +159,8 @@ reinterpret its internal geometry.
 - Place it in a calm corner, header, or closing frame where it remains legible.
 - On busy imagery, place the complete logo image on a simple light card or
   increase the surrounding clear space.
-- Because the file has a baked-in light background, do not pretend it is a
-  transparent cutout.
+- The transparent background may blend into approved light or dark brand
+  backdrops; preserve the complete canvas and clear space.
 - For small placements, pair it with the text `Dein-Dein` when brand recognition
   may be weak.
 
@@ -167,6 +169,7 @@ Never:
 - Stretch, squash, crop, rotate, skew, or mirror the logo.
 - Remove, recolor, regenerate, or animate individual internal shapes.
 - Add an outline, glow, texture, filter, or color overlay to the logo.
+- Replace the approved transparent background with a baked-in color.
 - Place copy, stickers, or partner marks inside its clear space.
 - Use an AI-generated approximation of the logo.
 

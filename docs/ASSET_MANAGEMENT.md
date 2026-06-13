@@ -91,7 +91,10 @@ Do not include an asset in a review render if its usage rights are unknown.
 ## Approved Brand Assets
 
 - Use `dein-new-logo.png` as the official logo in this repository.
-- Preserve its aspect ratio and baked-in light background.
+- Preserve its aspect ratio, transparent background, internal geometry, and
+  subtle outer shadow.
+- Keep `assets/archive/dein-new-logo-opaque-original.png` only as the
+  byte-identical provenance source; do not use it in new work.
 - Do not create derived, recolored, cropped, or AI-generated logo variants.
 - Follow [../MARKETING_BRAND_GUIDE.md](../MARKETING_BRAND_GUIDE.md) for all logo,
   color, typography, and naming rules.
