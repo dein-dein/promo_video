@@ -19,8 +19,9 @@ export const mottoToMarkRevealCampaign = {
     secondLine: "Your Movies.",
     url: "dein-dein.com",
   },
+  platformStatement: "An independent movie and event discovery platform.",
   disclaimer:
-    "Independent event discovery platform. Confirm details with the official provider.",
+    "Disclaimer: Confirm event details with the official ticketing or event provider before attending.",
   logo: "dein-new-logo.png",
   audio: null,
   ending: "url-with-disclaimer",

@@ -15,6 +15,14 @@ import {
 } from "./motto-to-mark-reveal-bumper";
 import {ShowtimeTicketLinkIntro} from "./showtime-ticket-link-intro";
 import {ShowtimeCityTicketDiscovery} from "./showtime-city-ticket-discovery";
+import {threeVideoMergeCampaign} from "./campaigns/three-video-merge.js";
+import {
+  HomepageBrowserLoadVertical,
+  ShowtimeCityTicketDiscoveryVerticalV02,
+  ThreeVideoMergeLandscape,
+  ThreeVideoMergeVertical,
+  ThreeVideoMergeVerticalV03,
+} from "./three-video-merge";
 
 export const Root = () => (
   <>
@@ -73,6 +81,46 @@ export const Root = () => (
       fps={mottoToMarkRevealCampaign.fps}
       width={mottoToMarkRevealCampaign.compositions.landscape.width}
       height={mottoToMarkRevealCampaign.compositions.landscape.height}
+    />
+    <Composition
+      id="HomepageBrowserLoadVertical"
+      component={HomepageBrowserLoadVertical}
+      durationInFrames={threeVideoMergeCampaign.segments.homepage.durationInFrames}
+      fps={threeVideoMergeCampaign.fps}
+      width={1080}
+      height={1920}
+    />
+    <Composition
+      id="ShowtimeCityTicketDiscoveryVerticalV02"
+      component={ShowtimeCityTicketDiscoveryVerticalV02}
+      durationInFrames={threeVideoMergeCampaign.segments.showtime.durationInFrames}
+      fps={threeVideoMergeCampaign.fps}
+      width={1080}
+      height={1920}
+    />
+    <Composition
+      id={threeVideoMergeCampaign.compositions.landscape.id}
+      component={ThreeVideoMergeLandscape}
+      durationInFrames={threeVideoMergeCampaign.durationInFrames}
+      fps={threeVideoMergeCampaign.fps}
+      width={threeVideoMergeCampaign.compositions.landscape.width}
+      height={threeVideoMergeCampaign.compositions.landscape.height}
+    />
+    <Composition
+      id={threeVideoMergeCampaign.compositions.vertical.id}
+      component={ThreeVideoMergeVertical}
+      durationInFrames={threeVideoMergeCampaign.durationInFrames}
+      fps={threeVideoMergeCampaign.fps}
+      width={threeVideoMergeCampaign.compositions.vertical.width}
+      height={threeVideoMergeCampaign.compositions.vertical.height}
+    />
+    <Composition
+      id={threeVideoMergeCampaign.compositions.verticalV03.id}
+      component={ThreeVideoMergeVerticalV03}
+      durationInFrames={threeVideoMergeCampaign.durationInFrames}
+      fps={threeVideoMergeCampaign.fps}
+      width={threeVideoMergeCampaign.compositions.verticalV03.width}
+      height={threeVideoMergeCampaign.compositions.verticalV03.height}
     />
   </>
 );

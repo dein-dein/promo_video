@@ -14,16 +14,16 @@
 
 | Review | Status | Notes |
 | --- | --- | --- |
-| Key stills | Pass | Opening, assembled motto, transition, logo resolve, and final hold inspected in both formats |
-| Full muted exports | Pass | Vertical and landscape review renders completed |
+| Key stills | Pass | Revised platform statement and secondary disclaimer hierarchy inspected in both formats |
+| Full muted exports | Pass | Revised vertical and landscape review renders completed |
 | Logo integrity | Pass | Complete transparent official logo only; no internal animation |
-| Duration, dimensions, codec | Pass | Both exports are exactly `6s`, H.264/AVC, and use the approved dimensions |
-| Audio-track count | Pass | Both exports contain `0` audio tracks |
-| Review-to-approved checksum | Pass | Vertical: `e10bd8c81fe89af9ade727c64b6fb6ab66e270ffba69b62f2a86d97fb1c2b141`; landscape: `eb4ef939522b4ab0156a80484368f69db0acd8ca648179620d6406473a0ede66` |
+| Duration, dimensions, codec | Pass | Both revised exports are exactly `6s`, H.264/AVC, and use the approved dimensions |
+| Audio-track count | Pass | Both revised exports contain `0` audio tracks |
+| Review-to-approved checksum | Pass | Vertical: `9614e2e2cfe804d79b67f3e83207ffea80b4a2a446be27953041aa12ccbf4477`; landscape: `8724c908f7864def4dc4caa996f317ebece1f130a74f10dc1d285471aa850248` |
 
 ## Final Decision
 
 - [x] Approved for publishing
 - [ ] Revisions required
 
-**Decision notes:** Separate additive motto-to-mark alternative approved after key-frame, technical, and byte-identity review.
+**Decision notes:** Revised platform statement and secondary labeled disclaimer approved after visual, technical, and byte-identity review.

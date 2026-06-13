@@ -18,7 +18,14 @@
     "render:motto-logo-cinematic-bumper:landscape:review": "remotion render src/index.ts MottoLogoCinematicBumperLandscape campaigns/2026-06-12-motto-logo-cinematic-bumper/working/renders/motto-logo-cinematic-bumper-landscape-review-v01.mp4 --codec h264 --muted",
     "render:motto-to-mark-reveal:stills": "node scripts/render-motto-to-mark-reveal-stills.mjs",
     "render:motto-to-mark-reveal:vertical:review": "remotion render src/index.ts MottoToMarkRevealVertical campaigns/2026-06-12-motto-to-mark-reveal-bumper/working/renders/motto-to-mark-reveal-vertical-review-v01.mp4 --codec h264 --muted",
-    "render:motto-to-mark-reveal:landscape:review": "remotion render src/index.ts MottoToMarkRevealLandscape campaigns/2026-06-12-motto-to-mark-reveal-bumper/working/renders/motto-to-mark-reveal-landscape-review-v01.mp4 --codec h264 --muted"
+    "render:motto-to-mark-reveal:landscape:review": "remotion render src/index.ts MottoToMarkRevealLandscape campaigns/2026-06-12-motto-to-mark-reveal-bumper/working/renders/motto-to-mark-reveal-landscape-review-v01.mp4 --codec h264 --muted",
+    "render:three-video-merge:stills": "node scripts/render-three-video-merge-stills.mjs",
+    "render:three-video-merge:landscape:review": "remotion render src/index.ts ThreeVideoMergeLandscape campaigns/2026-06-14-three-video-merge/working/renders/three-video-merge-landscape-review-v01.mp4 --codec h264 --muted",
+    "render:three-video-merge:vertical:review": "remotion render src/index.ts ThreeVideoMergeVertical campaigns/2026-06-14-three-video-merge/working/renders/three-video-merge-vertical-review-v01.mp4 --codec h264 --muted",
+    "render:three-video-merge:v02:stills": "node scripts/render-three-video-merge-v02-stills.mjs",
+    "render:three-video-merge:v02:landscape:review": "remotion render src/index.ts ThreeVideoMergeLandscape campaigns/2026-06-14-three-video-merge/working/renders/three-video-merge-landscape-review-v02.mp4 --codec h264 --muted",
+    "render:three-video-merge:v02:vertical:review": "remotion render src/index.ts ThreeVideoMergeVertical campaigns/2026-06-14-three-video-merge/working/renders/three-video-merge-vertical-review-v02.mp4 --codec h264 --muted",
+    "render:three-video-merge:vertical:v03:review": "remotion render src/index.ts ThreeVideoMergeVerticalV03 campaigns/2026-06-14-three-video-merge/working/renders/three-video-merge-vertical-review-v03.mp4 --codec h264 --muted"
   },
   "dependencies": {
     "@remotion/media": "4.0.475",

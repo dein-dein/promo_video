@@ -18,7 +18,7 @@
 
 **Hook and supporting message:** `You.` and `Your Movies.`
 
-**Approved ending:** Intact transparent official logo, `dein-dein.com`, and `Independent event discovery platform. Confirm details with the official provider.`
+**Approved ending:** Intact transparent official logo, `dein-dein.com`, `An independent movie and event discovery platform.`, and the secondary legal line `Disclaimer: Confirm event details with the official ticketing or event provider before attending.`
 
 **Audio:** Silent video-only output.
 

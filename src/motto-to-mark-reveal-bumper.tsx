@@ -182,9 +182,26 @@ const MarkStory = ({frame, format}: {frame: number; format: Format}) => {
         <div
           style={{
             fontSize: isVertical ? 35 : 31,
-            fontWeight: 560,
+            fontWeight: 620,
             letterSpacing: "-0.015em",
-            lineHeight: 1.35,
+            lineHeight: 1.3,
+          }}
+        >
+          {campaign.platformStatement}
+        </div>
+        <div
+          style={{
+            maxWidth: isVertical ? 760 : 760,
+            margin: isVertical ? "25px auto 0" : "23px 0 0",
+            paddingTop: isVertical ? 23 : 20,
+            borderTop: `2px solid ${colors.gold}`,
+            color: colors.navy,
+            fontSize: isVertical ? 23 : 20,
+            fontStyle: "italic",
+            fontWeight: 480,
+            letterSpacing: "-0.005em",
+            lineHeight: 1.4,
+            opacity: 0.76,
           }}
         >
           {campaign.disclaimer}

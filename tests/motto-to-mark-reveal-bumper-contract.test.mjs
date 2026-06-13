@@ -32,8 +32,12 @@ test("motto-to-mark reveal preserves approved copy, transparent logo, and silent
     url: "dein-dein.com",
   });
   assert.equal(
+    campaign.platformStatement,
+    "An independent movie and event discovery platform.",
+  );
+  assert.equal(
     campaign.disclaimer,
-    "Independent event discovery platform. Confirm details with the official provider.",
+    "Disclaimer: Confirm event details with the official ticketing or event provider before attending.",
   );
   assert.equal(campaign.logo, "dein-new-logo.png");
   assert.equal(campaign.audio, null);
