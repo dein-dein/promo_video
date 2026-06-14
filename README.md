@@ -88,3 +88,22 @@ short-bumper example is
 `campaigns/2026-06-11-homepage-browser-load/`; reuse its production pattern
 without assuming every bumper needs URL typing, a browser frame, or the same
 camera path.
+
+## Reusable Movie Showtime Poster
+
+Generate the fixed `1080x1350` Dark Focus social poster with structured inputs:
+
+```bash
+npm run poster:movie -- --category "Mollywood" --region "Germany"
+npm run poster:movie -- --category "Mollywood" --region "Germany" --movie-title "Selected Movie"
+```
+
+The optional movie title switches from the category-only mode to the
+selected-movie mode. The command validates required fields and title length,
+then writes a deterministically named review PNG under
+`campaigns/movie-showtime-social-poster/working/renders/`.
+
+The generator always uses the intact official logo, fixed `Find showtimes`
+CTA, `dein-dein.com`, and the approved movie-showtime disclaimer. It does not
+use movie artwork or automatically promote review renders to
+`exports/approved/`.

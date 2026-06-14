@@ -5,6 +5,7 @@
   "scripts": {
     "test": "node --test tests/*.test.mjs",
     "studio": "remotion studio src/index.ts",
+    "poster:movie": "node scripts/render-movie-showtime-social-poster.mjs",
     "audio:generate": "node scripts/generate-original-audio.mjs",
     "render:intro": "remotion render src/index.ts ShowtimeTicketLinkIntro campaigns/intro/working/renders/showtime-discovery-landscape-review-v02.mp4 --codec h264",
     "render:stills": "node scripts/render-stills.mjs",

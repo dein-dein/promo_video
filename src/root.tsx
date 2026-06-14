@@ -23,9 +23,20 @@ import {
   ThreeVideoMergeVertical,
   ThreeVideoMergeVerticalV03,
 } from "./three-video-merge";
+import {movieShowtimeSocialPosterCampaign} from "./campaigns/movie-showtime-social-poster.js";
+import {MovieShowtimeSocialPoster} from "./movie-showtime-social-poster";
 
 export const Root = () => (
   <>
+    <Composition
+      id={movieShowtimeSocialPosterCampaign.composition.id}
+      component={MovieShowtimeSocialPoster}
+      durationInFrames={1}
+      fps={30}
+      width={movieShowtimeSocialPosterCampaign.composition.width}
+      height={movieShowtimeSocialPosterCampaign.composition.height}
+      defaultProps={movieShowtimeSocialPosterCampaign.defaultProps}
+    />
     <Composition
       id="ShowtimeTicketLinkIntro"
       component={ShowtimeTicketLinkIntro}
